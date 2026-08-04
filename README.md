@@ -1,6 +1,6 @@
 # Gateway Intelligence — website
 
-One-page marketing site for Gateway Intelligence: AI help for nature nonprofits, park partners, and gateway businesses.
+One-page marketing site for Gateway Intelligence: AI help for tourism businesses, park partners, and gateway organizations. The audience is general business first — lodges, tour companies, outfitters, shops, restaurants — with nature nonprofits and park partners present but secondary.
 
 **Live:** https://goehringcory-lang.github.io/gateway-intelligence/
 

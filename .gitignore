@@ -1,0 +1,11 @@
+# Never publish the confidential business plan or internal source docs
+*.docx
+*.doc
+*.pdf
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/

@@ -21,8 +21,8 @@ assets/           favicons and social share image
 - **Colors, spacing, and type scale** are CSS custom properties in the `:root` block at the top of `css/style.css`.
 - **Hide all prices** by changing the opening tag to `<body data-prices="off">` — no other edits needed.
 - **Contact address** is a placeholder. Search for `TODO(contact)` to find every spot that needs the real business email or scheduling link.
-- **Employer naming** in the About section is intentionally generic; see the `EMPLOYER NAMING` comment.
-- A commented-out `<figure>` in the About section is ready for a real headshot.
+- **Positioning** is deliberately impersonal: the site sells the business case for AI enablement, not a founder biography. There is no About/founder section, and no individual is named anywhere in the copy or structured data.
+- **Statistics** each carry a `.source` line naming the study they come from. If you edit a number, edit its source line with it — and check `data-count-to` on the `.stat__value`, which drives the count-up animation and must match the displayed figure.
 
 ## Local preview
 

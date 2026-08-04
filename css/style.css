@@ -652,13 +652,6 @@ html:not(.js) .accordion__icon { display: none; }
     linear-gradient(100deg, rgba(3, 12, 14, .78) 0%, rgba(3, 12, 14, .46) 40%, rgba(3, 12, 14, .08) 64%, transparent 100%),
     linear-gradient(to top, rgba(3, 12, 14, .55) 0%, transparent 40%);
 }
-.hero__arch {
-  position: absolute;
-  top: 8%; right: -6%;
-  width: min(58vw, 720px);
-  color: #c4b0f8;
-  opacity: .16;
-}
 .hero__art .topo { position: absolute; inset: auto 0 0 0; height: 70%; color: #fff; opacity: .05; }
 /* thin lilac contour threads drawn over the whole hero field */
 .hero__art .topo--hero {
@@ -821,16 +814,6 @@ html.js .reveal {
 }
 html.js .reveal.is-visible { opacity: 1; transform: none; }
 
-/* Hero arch stroke draw-in */
-.hero__arch .draw {
-  stroke-dasharray: 260;
-  stroke-dashoffset: 260;
-  animation: draw 1.8s var(--ease) forwards;
-}
-.hero__arch .draw:nth-child(2) { animation-delay: .25s; }
-.hero__arch .draw:nth-child(3) { animation-delay: .45s; }
-@keyframes draw { to { stroke-dashoffset: 0; } }
-
 .badge.is-visible { animation: pulse 1.6s var(--ease) .3s 1; }
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 0 rgba(245, 197, 24, 0); }
@@ -883,7 +866,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .step::before { display: none; }
   .step { padding-top: 26px; }
   .hero { min-height: auto; padding-bottom: 0; }
-  .hero__arch { top: 4%; right: -22%; width: 92vw; }
   /* pull the blooms back on-canvas and ease the scrim on narrow screens */
   .hero__art::after {
     background:
@@ -921,7 +903,6 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .marquee__track { animation: none; flex-wrap: wrap; gap: 14px 28px; }
   .marquee__track:last-child { display: none; }
   .marquee__track li::after { margin-left: 28px; }
-  .hero__arch .draw { stroke-dashoffset: 0; }
   .card:hover, .card:focus-within, .btn--primary:hover { transform: none; }
   .accordion__panel { transition: none; }
 }

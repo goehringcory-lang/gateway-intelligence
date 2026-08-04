@@ -40,17 +40,18 @@
 
 <!-- ============================================================
      SVG SPRITE — arch-over-bars brand mark + line icons.
-     The mark is a recreation of the logo motif so it can sit on
-     any background; the source Logo.png has a baked gray field.
+     The mark is the vector form of the Gateway Intelligence logo
+     (assets/logo.svg); it inherits currentColor so it sits on any
+     background.
      ============================================================ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="arch" viewBox="0 0 120 78">
-      <path d="M8 60a52 52 0 0 1 104 0" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
-      <rect x="38" y="44" width="13" height="22" rx="2" fill="currentColor"/>
-      <rect x="55" y="26" width="13" height="40" rx="2" fill="currentColor"/>
-      <rect x="72" y="36" width="13" height="30" rx="2" fill="currentColor"/>
-      <path d="M4 72c34-10 78-10 112 0" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+      <path d="M8 68V60a52 52 0 0 1 104 0v8" fill="none" stroke="currentColor" stroke-width="8"/>
+      <rect x="38" y="46" width="13" height="20" fill="currentColor"/>
+      <rect x="55" y="38" width="13" height="28" fill="currentColor"/>
+      <rect x="72" y="30" width="13" height="36" fill="currentColor"/>
+      <path d="M2 74C32 58 88 58 118 74 88 64 32 64 2 74Z" fill="currentColor"/>
     </symbol>
     <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13h4l2 3h6l2-3h4M3 13l3-8h12l3 8v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
@@ -96,9 +97,9 @@
 <section class="band band--dark hero" id="top">
   <div class="hero__art" aria-hidden="true">
     <svg class="hero__arch" viewBox="0 0 120 78" preserveAspectRatio="xMidYMid meet">
-      <path class="draw" d="M8 60a52 52 0 0 1 104 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path class="draw" d="M4 72c34-10 78-10 112 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <path class="draw" d="M44.5 66V46M61.5 66V28M78.5 66V38" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="draw" d="M8 68V60a52 52 0 0 1 104 0v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="draw" d="M2 74C32 62 88 62 118 74" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path class="draw" d="M44.5 66V46M61.5 66V38M78.5 66V30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
     </svg>
     <svg class="topo" viewBox="0 0 1200 600" preserveAspectRatio="none">
       <path d="M-20 470c180-70 330-40 470 10s280 70 420 10 260-90 350-60" fill="none" stroke="currentColor" stroke-width="1.2"/>

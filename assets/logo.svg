@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Gateway Intelligence">
+  <title>Gateway Intelligence</title>
+  <g fill="currentColor" color="#17479E">
+    <!-- arch-over-bars mark -->
+    <g transform="translate(140 16) scale(2)">
+      <path d="M8 68V60a52 52 0 0 1 104 0v8" fill="none" stroke="currentColor" stroke-width="8"/>
+      <rect x="38" y="46" width="13" height="20"/>
+      <rect x="55" y="38" width="13" height="28"/>
+      <rect x="72" y="30" width="13" height="36"/>
+      <path d="M2 74C32 58 88 58 118 74 88 64 32 64 2 74Z"/>
+    </g>
+    <!-- wordmark -->
+    <text x="260" y="243" text-anchor="middle"
+          font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+          font-size="76" font-weight="800" letter-spacing="1">GATEWAY</text>
+    <text x="260" y="285" text-anchor="middle"
+          font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+          font-size="26" font-weight="600" letter-spacing="10.5" dx="5.25">INTELLIGENCE</text>
+  </g>
+</svg>

@@ -324,7 +324,8 @@ h3 {
   color: var(--ink);
 }
 /* Single-attribute switch: <body data-prices="off"> hides all pricing */
-[data-prices="off"] .price { display: none; }
+[data-prices="off"] .price,
+[data-prices="off"] .price-fact { display: none; }
 
 .checks { display: grid; gap: 11px; }
 .checks li {

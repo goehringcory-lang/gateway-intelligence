@@ -775,6 +775,16 @@ html:not(.js) .accordion__icon { display: none; }
   color: var(--text-dark-hi);
   text-wrap: balance;
 }
+.ethos__note {
+  max-width: 720px;
+  margin-inline: auto;
+  margin-top: clamp(22px, 3vw, 34px);
+  font-size: clamp(16.5px, 1.9vw, 19px);
+  line-height: 1.62;
+  color: var(--text-dark-lo);
+  text-wrap: pretty;
+}
+.ethos__note strong { color: var(--text-dark-hi); font-weight: 700; }
 
 /* ---------------------------- FINALE ---------------------------- */
 .band--finale { padding-block: clamp(90px, 11vw, 150px); }

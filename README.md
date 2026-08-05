@@ -10,8 +10,10 @@ Static HTML, CSS, and vanilla JavaScript — no build step, no dependencies. Pus
 
 ```
 index.html        content, inline SVG sprite, meta + JSON-LD
-css/style.css     design tokens, bands, components, motion
+checklist.html    the AI Readiness Checklist — free self-check the finale CTA links to
+css/style.css     design tokens, bands, components, motion, checklist + print styles
 js/main.js        sticky nav, scroll reveals, count-up stats, accordion, mobile menu
+js/checklist.js   checklist live score, verdict highlight, print, localStorage persistence
 assets/           favicons and social share image
 ```
 

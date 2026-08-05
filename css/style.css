@@ -805,6 +805,123 @@ html:not(.js) .accordion__icon { display: none; }
 .footer__contact a:hover { color: #8FBEFF; }
 .footer__copy { color: rgba(237, 241, 247, .45); }
 
+/* ------------------------- CHECKLIST PAGE -------------------------
+   checklist.html — the self-check the finale CTA links to. */
+.subhero {
+  padding-top: calc(var(--nav-h) + clamp(64px, 9vw, 120px));
+  padding-bottom: clamp(56px, 7vw, 90px);
+}
+.subhero__title { font-size: clamp(36px, 5vw, 60px); }
+.subhero .lede { color: var(--text-dark-lo); }
+.subhero__note {
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(237, 241, 247, .55);
+}
+
+.checklist { display: grid; gap: 24px; }
+
+.check-group {
+  margin: 0;
+  padding: 30px 28px 26px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+.check-group__num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-bottom: 10px;
+}
+.check-group h3 { margin-bottom: 6px; }
+.check-group__note {
+  font-size: 14.5px;
+  color: rgba(58, 65, 82, .8);
+  margin-bottom: 16px;
+}
+
+.check-list { display: grid; gap: 4px; }
+.check-item label {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 10px 12px;
+  margin-inline: -12px;
+  border-radius: 12px;
+  font-size: 15.5px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background .15s;
+}
+.check-item label:hover { background: rgba(37, 99, 201, .06); }
+.check-item input {
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  accent-color: var(--blue-deep);
+  cursor: pointer;
+}
+.check-item input:checked + span { color: var(--ink); font-weight: 600; }
+
+/* score band */
+.scoreline {
+  margin-top: clamp(28px, 4vw, 44px);
+  font-size: clamp(20px, 2.4vw, 27px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text-dark-hi);
+  font-variant-numeric: tabular-nums;
+}
+
+.verdicts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: clamp(36px, 5vw, 56px);
+  text-align: left;
+}
+.verdict {
+  padding: 24px 22px;
+  border: 1px solid var(--line-dark);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .035);
+  transition: background .3s var(--ease), border-color .3s, box-shadow .3s;
+}
+.verdict__range {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.verdict strong {
+  display: block;
+  color: var(--text-dark-hi);
+  font-size: 17px;
+  letter-spacing: -.015em;
+  margin-bottom: 8px;
+}
+.verdict p { font-size: 14px; color: var(--text-dark-lo); }
+.verdict.is-active {
+  border-color: rgba(45, 124, 243, .65);
+  background: rgba(45, 124, 243, .14);
+  box-shadow: 0 0 40px rgba(37, 99, 201, .25);
+}
+
+@media (max-width: 900px) {
+  .verdicts { grid-template-columns: 1fr; }
+}
+
+/* JS-only controls (print / start over) stay hidden without JS */
+html:not(.js) .js-only { display: none; }
+
 /* ----------------------------- MOTION ----------------------------- */
 /* Reveal-on-scroll: hidden state only applies when JS is running */
 html.js .reveal {
@@ -889,6 +1006,49 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 @media (max-width: 380px) {
   h1 { font-size: 38px; }
   .stat__value { font-size: 36px; }
+}
+
+/* ------------------------------ PRINT ------------------------------
+   Mostly for the checklist page — it doubles as a paper hand-out. */
+@media print {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+  html.js .reveal { opacity: 1 !important; transform: none !important; }
+  .skip-link, .nav, .no-print, .topo-layer, .hero__art, .orb { display: none !important; }
+
+  body, .band, .band--light, .band--dark, .band--quiet, .footer {
+    background: #fff !important;
+    color: #333;
+  }
+  .band { padding-block: 28px; }
+  .band--dark::before { display: none; }
+
+  h1, h2, h3, .scoreline, .verdict strong, .emphasis,
+  .wordmark__text, .checks strong, .exchange strong {
+    color: #000 !important;
+    text-shadow: none !important;
+  }
+  .grad {
+    background: none;
+    -webkit-background-clip: initial;
+    background-clip: initial;
+    color: #000;
+    text-shadow: none;
+  }
+  .eyebrow, .check-group__num, .verdict__range { color: #333 !important; }
+  .lede, .subhero__note, .verdict p, .finale__note, .footer,
+  .footer__place, .footer__copy { color: #444 !important; }
+
+  .check-group, .verdict, .card {
+    border-color: #bbb;
+    background: #fff;
+    break-inside: avoid;
+  }
+  .check-item label { padding-block: 6px; }
+  .footer { border-top-color: #bbb; }
+  .wordmark__mark { color: #000; }
 }
 
 /* ------------------- REDUCED MOTION (master reset) ------------------- */

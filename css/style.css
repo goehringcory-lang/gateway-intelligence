@@ -325,7 +325,8 @@ h3 {
 }
 /* Single-attribute switch: <body data-prices="off"> hides all pricing */
 [data-prices="off"] .price,
-[data-prices="off"] .price-fact { display: none; }
+[data-prices="off"] .price-fact,
+[data-prices="off"] .price-text { display: none; }
 
 .checks { display: grid; gap: 11px; }
 .checks li {
@@ -928,6 +929,35 @@ html:not(.js) .accordion__icon { display: none; }
 @media (max-width: 900px) {
   .verdicts { grid-template-columns: 1fr; }
 }
+
+/* Optional email sign-up under the score — hidden until a list is set */
+.signup {
+  max-width: 560px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+.signup[hidden] { display: none; }
+.signup__label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-dark-lo);
+}
+.signup__row { display: flex; flex-wrap: wrap; gap: 10px; }
+.signup__input {
+  flex: 1 1 240px;
+  min-width: 0;
+  padding: 13px 20px;
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(255, 255, 255, .28);
+  background: rgba(255, 255, 255, .06);
+  color: var(--text-dark-hi);
+  font: inherit;
+  font-size: 15px;
+}
+.signup__input::placeholder { color: rgba(237, 241, 247, .45); }
+.signup__input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* JS-only controls (print / start over) stay hidden without JS */
 html:not(.js) .js-only { display: none; }

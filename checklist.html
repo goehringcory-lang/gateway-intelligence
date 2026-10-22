@@ -84,7 +84,7 @@
     <p class="eyebrow reveal">The AI Readiness Checklist for Gateway Businesses</p>
     <h1 class="subhero__title reveal" style="--i:1">Run this before you <span class="grad">spend a dollar</span>.</h1>
     <p class="lede reveal" style="--i:2">Fifteen quick checks, five minutes. Mark each line that is true for you today. The more you can check, the more an AI dollar will pay you back. The lines you cannot check are your to-do list — and most of them cost nothing to fix.</p>
-    <p class="subhero__note reveal" style="--i:3">No sign-up. No email list. Your answers stay in your browser — we never see them.</p>
+    <p class="subhero__note reveal" style="--i:3">No sign-up needed. Your answers stay in your browser.</p>
   </div>
 </section>
 
@@ -188,7 +188,20 @@
       <button class="btn btn--ghost btn--on-dark js-only" id="print-btn" type="button">Print or save as PDF</button>
       <button class="btn btn--ghost btn--on-dark js-only" id="reset-btn" type="button">Start over</button>
     </div>
-    <p class="finale__note reveal" style="--i:7">The checklist is the whole thing — nothing to buy and no address to hand over. If it helped, pass it to another gateway business.</p>
+
+    <!-- TODO(newsletter): set data-list to the Buttondown username of a Gateway Intelligence list.
+         While it is empty, the form stays hidden and the page works as before. -->
+    <form class="signup no-print" id="signup" method="post" target="_blank" data-list="" hidden>
+      <label class="signup__label" for="signup-email">Want plain AI tips for gateway businesses, and first word when new course dates open? Leave your email. Your score goes with it, so our notes fit where you are. No spam. Leave anytime.</label>
+      <div class="signup__row">
+        <input class="signup__input" type="email" name="email" id="signup-email" required placeholder="you@yourbusiness.com" autocomplete="email">
+        <input type="hidden" name="tag" value="checklist">
+        <input type="hidden" name="metadata__checklist_score" id="signup-score" value="">
+        <button class="btn btn--primary" type="submit">Send me tips <span class="arrow">&rarr;</span></button>
+      </div>
+    </form>
+
+    <p class="finale__note reveal" style="--i:7">The checklist is the whole thing — nothing to buy. If it helped, pass it to another gateway business.</p>
   </div>
 </section>
 </main>

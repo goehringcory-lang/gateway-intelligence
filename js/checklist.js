@@ -1,7 +1,8 @@
 /* ============================================================
    Gateway Intelligence — checklist page
    Live score, verdict highlight, print, and start-over. Answers
-   persist in localStorage only — nothing ever leaves the browser.
+   persist in localStorage only. The one exception is the optional
+   sign-up form, which sends the visitor's email and score count.
    Without JS the page still works: native checkboxes plus the
    printed ranges under "find your range below".
    ============================================================ */
@@ -14,6 +15,15 @@
   var scoreLine = document.getElementById('score-line');
   var verdicts = document.querySelectorAll('.verdict');
   var STORE_KEY = 'gi-checklist-v1';
+  var signup = document.getElementById('signup');
+  var signupScore = document.getElementById('signup-score');
+
+  // The sign-up form stays hidden until a Buttondown list is set in data-list
+  if (signup && signup.dataset.list) {
+    signup.action = 'https://buttondown.com/api/emails/embed-subscribe/' +
+      encodeURIComponent(signup.dataset.list);
+    signup.hidden = false;
+  }
 
   function readSaved() {
     try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; }
@@ -42,6 +52,7 @@
     });
 
     save(state);
+    if (signupScore) signupScore.value = checked;
 
     if (scoreLine) {
       scoreLine.textContent = 'You checked ' + checked + ' of ' + boxes.length + '.';

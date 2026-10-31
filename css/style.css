@@ -962,6 +962,89 @@ html:not(.js) .accordion__icon { display: none; }
 /* JS-only controls (print / start over) stay hidden without JS */
 html:not(.js) .js-only { display: none; }
 
+/* ---------------------- INTEL FLOW (scroll story) ----------------------
+   A sticky full-screen canvas sits behind the panes. It is not a .band:
+   .band clips overflow, which would break position: sticky. */
+.flow {
+  position: relative;
+  background: var(--cream);
+  padding-bottom: calc(var(--band-y) * .5);
+}
+.flow__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  margin-bottom: -100vh;
+  margin-bottom: -100svh;
+  overflow: hidden;
+  z-index: 0;
+}
+.flow__canvas { display: block; width: 100%; height: 100%; }
+.flow__readout {
+  position: absolute;
+  right: var(--pad-x);
+  bottom: 20px;
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-pill);
+  background: rgba(247, 244, 238, .9);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.flow__readout b {
+  font-size: 18px; font-weight: 800; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.flow__body { position: relative; z-index: 1; }
+.flow__chapter { display: flex; flex-direction: column; }
+.flow__chapter--intro { padding-top: calc(var(--nav-h) + 10vh); }
+.flow__chapter:nth-child(even) .flow__pane { align-self: flex-end; }
+.flow__gap { height: 90vh; }
+.flow__end { height: 75vh; }
+.flow__pane {
+  max-width: 480px;
+  display: grid; gap: 12px;
+  padding: 28px 30px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-card);
+  background: rgba(247, 244, 238, .9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 24px 48px -28px rgba(11, 15, 28, .35);
+}
+.flow__pane .eyebrow { margin-bottom: 0; }
+.flow__pane h2, .flow__pane h3 { max-width: none; }
+.flow__pane h3 { font-size: clamp(24px, 2.6vw, 32px); letter-spacing: -.03em; line-height: 1.1; }
+.flow__chips { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.flow__chips li {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-pill);
+  font-size: 13px; color: var(--ink);
+}
+.flow__chips i, .flow__list i {
+  width: 9px; height: 9px; border-radius: 2px; flex: none;
+  background: var(--c);
+}
+.flow__list { display: grid; gap: 10px; }
+.flow__list li {
+  display: grid; grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 10px; align-items: baseline;
+}
+.flow__list strong { color: var(--ink); font-weight: 700; }
+.flow__list span { grid-column: 2; font-size: 15px; }
+.flow__note { font-size: 13px; opacity: .75; }
+
+/* Without JavaScript there is no animation, so drop the gaps and the stage. */
+html:not(.js) .flow__stage,
+html:not(.js) .flow__gap,
+html:not(.js) .flow__end { display: none; }
+html:not(.js) .flow__body { display: grid; gap: 20px; padding-block: var(--band-y); }
+html:not(.js) .flow__chapter--intro { padding-top: 0; }
+
 /* ----------------------------- MOTION ----------------------------- */
 /* Reveal-on-scroll: hidden state only applies when JS is running */
 html.js .reveal {
@@ -1038,6 +1121,13 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .hero__cta .btn { flex: 1 1 auto; justify-content: center; }
 }
 
+@media (max-width: 767px) {
+  .flow__chapter:nth-child(even) .flow__pane { align-self: stretch; }
+  .flow__pane { padding: 22px 20px; }
+  .flow__gap { height: 80vh; }
+  .flow__readout { left: var(--pad-x); right: auto; }
+}
+
 @media (max-width: 560px) {
   .stats--4, .stats--3 { grid-template-columns: 1fr 1fr; }
   .footer__inner { flex-direction: column; align-items: flex-start; text-align: left; }
@@ -1057,6 +1147,8 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   }
   html.js .reveal { opacity: 1 !important; transform: none !important; }
   .skip-link, .nav, .no-print, .topo-layer, .hero__art, .orb { display: none !important; }
+  .flow__stage, .flow__gap, .flow__end { display: none !important; }
+  .flow__pane { box-shadow: none; }
 
   body, .band, .band--light, .band--dark, .band--quiet, .footer {
     background: #fff !important;

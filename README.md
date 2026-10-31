@@ -13,6 +13,7 @@ index.html        content, inline SVG sprite, meta + JSON-LD
 checklist.html    the AI Readiness Checklist — free self-check the finale CTA links to
 css/style.css     design tokens, bands, components, motion, checklist + print styles
 js/main.js        sticky nav, scroll reveals, count-up stats, accordion, mobile menu
+js/flow.js        "How Intelligence Flows" scroll story: sticky canvas behind the #flow panes
 js/checklist.js   checklist live score, verdict highlight, print, localStorage persistence, sign-up form
 assets/           favicons and social share image
 ```
@@ -30,6 +31,8 @@ assets/           favicons and social share image
 - **Reading level** is held to roughly 5th grade (Flesch-Kincaid ~4.5, reading ease ~80). Keep sentences short, prefer common words over industry terms, and stay in active voice. Service names are plain on purpose — "AI Readiness Check," "Build Sprint," "Part-Time AI Director" — and the mailto `subject=` values match those names.
 - **Page order** puts the offer early: one short "Why it matters" section with four numbers, then Services. Resist adding stat sections back above Services.
 - **Statistics** each carry a `.source` line naming the study they come from. If you edit a number, edit its source line with it — and check `data-count-to` on the `.stat__value`, which drives the count-up animation and must match the displayed figure.
+
+- **How Intelligence Flows** (`#flow`, between What We Build and How It Works) is a scroll story. Text panes scroll over a sticky canvas, and each open gap between panes plays one step: read, filter in, sort, filter out, pay off. The sources, needs, jobs, and results are listed twice: in the `#flow` chips and lists in `index.html`, and in the `SOURCES` and `NEEDS` arrays at the top of `js/flow.js`. Change both together. The counts are an example week and the pane says so; keep that note if you change them.
 
 ## Local preview
 

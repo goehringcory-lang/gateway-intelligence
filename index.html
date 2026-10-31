@@ -25,6 +25,7 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="stylesheet" href="css/style.css">
 <script src="js/main.js" defer></script>
+<script src="js/flow.js" defer></script>
 
 <script type="application/ld+json">
 {
@@ -313,6 +314,90 @@
       <div class="feature reveal" style="--i:4"><svg class="feature__icon" aria-hidden="true"><use href="#i-pen"/></svg><h3>Marketing that ships on time</h3><p>Listings, email, social posts, and trip descriptions made on a steady schedule, on brand, and checked before they go out. It stops depending on who has a free afternoon.</p></div>
       <div class="feature reveal" style="--i:5"><svg class="feature__icon" aria-hidden="true"><use href="#i-book"/></svg><h3>Answers from your own files</h3><p>Staff questions answered from your own documents, not from a computer's guess. New seasonal hires get up to speed in days instead of weeks.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- ================= HOW INTELLIGENCE FLOWS (scroll story) =================
+     Text panes scroll over a sticky canvas (js/flow.js). Each open gap between
+     panes plays one step: read, filter in, sort, filter out, pay off.
+     Counts are an example week, not client data. -->
+<section class="flow" id="flow" aria-labelledby="flow-title">
+  <div class="flow__stage" aria-hidden="true">
+    <canvas class="flow__canvas" id="flow-canvas"></canvas>
+    <p class="flow__readout"><b id="flow-ro-n">640</b> <span id="flow-ro-l">things heard this week</span></p>
+  </div>
+
+  <div class="container flow__body">
+    <div class="flow__chapter flow__chapter--intro">
+      <div class="flow__pane">
+        <p class="eyebrow">How Intelligence Flows</p>
+        <h2 class="h2--sm" id="flow-title">Your business already knows a lot. It is just scattered.</h2>
+        <p>Every square behind this text is one thing your business heard this week. A guest email. A review. A booking. A weather alert. Most of it gets lost. Scroll to see where it can go.</p>
+      </div>
+    </div>
+
+    <div class="flow__chapter">
+      <div class="flow__gap"></div>
+      <div class="flow__pane">
+        <p class="eyebrow">Step 1 &middot; Gather</p>
+        <h3>First, it all gets read.</h3>
+        <p>AI reads what comes in from the places you already use. Each square takes the color of where it came from.</p>
+        <ul class="flow__chips"><li><i style="--c:#2D7CF3"></i>Guest emails &amp; calls</li><li><i style="--c:#0E9F8E"></i>Online reviews</li><li><i style="--c:#1E3A8A"></i>Booking system</li><li><i style="--c:#E0674A"></i>Weather &amp; park alerts</li><li><i style="--c:#7C5CC4"></i>Sales &amp; stock</li><li><i style="--c:#4D8B3A"></i>Website &amp; social</li></ul>
+      </div>
+    </div>
+
+    <div class="flow__chapter">
+      <div class="flow__gap"></div>
+      <div class="flow__pane">
+        <p class="eyebrow">Step 2 &middot; Filter In</p>
+        <h3>Then the noise falls away.</h3>
+        <p>Spam, repeats, and things that need no action drop out. What is left is what matters. In this example, 528 of 640 make it through.</p>
+      </div>
+    </div>
+
+    <div class="flow__chapter">
+      <div class="flow__gap"></div>
+      <div class="flow__pane">
+        <p class="eyebrow">Step 3 &middot; Sort</p>
+        <h3>Then like finds like.</h3>
+        <p>Things that point to the same need group up. A big group means a lot of guests are telling you the same thing.</p>
+        <ul class="flow__chips"><li><i style="--c:#2D7CF3"></i>Guest questions &middot; 150</li><li><i style="--c:#E0674A"></i>Busy days ahead &middot; 104</li><li><i style="--c:#0E9F8E"></i>Group &amp; quote requests &middot; 96</li><li><i style="--c:#7C5CC4"></i>Slow weeks coming &middot; 84</li><li><i style="--c:#1E3A8A"></i>Owner questions &middot; 94</li></ul>
+      </div>
+    </div>
+
+    <div class="flow__chapter">
+      <div class="flow__gap"></div>
+      <div class="flow__pane">
+        <p class="eyebrow">Step 4 &middot; Filter Out</p>
+        <h3>Then it flows into real work.</h3>
+        <p>Each group starts a job your team already does. A person still checks the work before it goes out.</p>
+        <ul class="flow__list">
+          <li><i style="--c:#2D7CF3"></i><strong>Booking replies</strong><span>Answers drafted in your voice. Staff check them and hit send.</span></li>
+          <li><i style="--c:#E0674A"></i><strong>Staff schedules</strong><span>Weather, park alerts, and bookings point to a rush. The schedule is ready first.</span></li>
+          <li><i style="--c:#0E9F8E"></i><strong>Quotes</strong><span>Group quotes start from your own prices and past work.</span></li>
+          <li><i style="--c:#7C5CC4"></i><strong>Marketing</strong><span>Open dates get posts and emails before they sit empty.</span></li>
+          <li><i style="--c:#1E3A8A"></i><strong>Dashboards</strong><span>Sales and bookings roll up into one clear page.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow__chapter">
+      <div class="flow__gap"></div>
+      <div class="flow__pane">
+        <p class="eyebrow">Step 5 &middot; Pay Off</p>
+        <h3>And your business runs better.</h3>
+        <ul class="flow__list">
+          <li><i style="--c:#2D7CF3"></i><strong>Faster replies</strong><span>Guests hear back in minutes, not hours.</span></li>
+          <li><i style="--c:#E0674A"></i><strong>Calmer busy days</strong><span>Less overtime and fewer surprises.</span></li>
+          <li><i style="--c:#0E9F8E"></i><strong>More quotes sent</strong><span>Groups get a price while they still care.</span></li>
+          <li><i style="--c:#7C5CC4"></i><strong>Fuller slow weeks</strong><span>Open dates get filled, not missed.</span></li>
+          <li><i style="--c:#1E3A8A"></i><strong>Clear numbers</strong><span>The owner sees how the season is going.</span></li>
+        </ul>
+        <p>We measure where you start, so you can see what changed.</p>
+        <p class="flow__note">Example week. The counts show how it works, not real data.</p>
+      </div>
+    </div>
+    <div class="flow__end" aria-hidden="true"></div>
   </div>
 </section>
 

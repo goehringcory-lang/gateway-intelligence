@@ -336,6 +336,59 @@ h3 {
   color: var(--ink);
 }
 
+/* Paid options: fit line, promise line, featured ongoing plan, promises strip */
+.card__best {
+  margin: -6px 0 18px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.card__best strong { color: var(--ink); }
+.card__promise {
+  margin-top: 18px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--blue-deep);
+  border-radius: 6px;
+  background: rgba(37, 99, 201, .06);
+  font-size: 13.5px;
+  line-height: 1.45;
+  font-weight: 600;
+  color: var(--ink);
+}
+.card__fine {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.card--featured {
+  border: 2px solid var(--blue-deep);
+  box-shadow: 0 18px 48px rgba(37, 99, 201, .14);
+}
+.tag--featured { background: var(--blue-deep); color: #fff; }
+.card--featured:hover, .card--featured:focus-within { border-color: var(--blue-deep); }
+
+.promises {
+  margin-top: clamp(40px, 5vw, 56px);
+  padding: clamp(26px, 4vw, 38px);
+  border: 1px solid var(--line-light);
+  border-radius: var(--r-card);
+  background: var(--surface);
+}
+.promises__title { margin-bottom: 22px; }
+.promises__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.promises__list li { display: grid; align-content: start; gap: 6px; font-size: 14.5px; line-height: 1.5; }
+.promises__list strong { color: var(--ink); font-size: 15.5px; }
+.promises__list span { color: var(--ink-soft); }
+.promises__cta { margin-top: 26px; font-weight: 600; }
+.promises__cta a { color: var(--blue-deep); font-weight: 700; }
+@media (max-width: 960px) { .promises__list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .promises__list { grid-template-columns: 1fr; } }
+
 .checks { display: grid; gap: 11px; }
 .checks li {
   display: grid;

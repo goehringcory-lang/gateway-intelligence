@@ -23,8 +23,8 @@
   ];
   var NEEDS = [
     { name: 'Guest questions', n: 150, c: '#2D7CF3', work: 'Booking replies', result: 'Faster replies' },
-    { name: 'Busy days ahead', n: 104, c: '#E0674A', work: 'Staff schedules', result: 'Calmer busy days' },
-    { name: 'Group & quote requests', n: 96, c: '#0E9F8E', work: 'Quotes', result: 'More quotes sent' },
+    { name: 'Busy days coming', n: 104, c: '#E0674A', work: 'Staff schedules', result: 'Calmer busy days' },
+    { name: 'Group and quote requests', n: 96, c: '#0E9F8E', work: 'Quotes', result: 'More quotes sent' },
     { name: 'Slow weeks coming', n: 84, c: '#7C5CC4', work: 'Marketing', result: 'Fuller slow weeks' },
     { name: 'Owner questions', n: 94, c: '#1E3A8A', work: 'Dashboards', result: 'Clear numbers' }
   ];
@@ -36,7 +36,7 @@
     [TOTAL, 'things heard this week'],
     [TOTAL, 'read from 6 places'],
     [KEPT, 'kept, ' + NOISE + ' filtered out'],
-    [NEEDS.length, 'needs found'],
+    [NEEDS.length, 'clear needs'],
     [NEEDS.length, 'jobs running'],
     [NEEDS.length, 'ways the business improves']
   ];

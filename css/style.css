@@ -328,6 +328,14 @@ h3 {
 [data-prices="off"] .price-fact,
 [data-prices="off"] .price-text { display: none; }
 
+.card__pitch {
+  margin: -6px 0 18px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .checks { display: grid; gap: 11px; }
 .checks li {
   display: grid;
@@ -786,6 +794,7 @@ html:not(.js) .accordion__icon { display: none; }
   text-wrap: pretty;
 }
 .ethos__note strong { color: var(--text-dark-hi); font-weight: 700; }
+.ethos__note a { color: var(--text-dark-hi); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------------------------- FINALE ---------------------------- */
 .band--finale { padding-block: clamp(90px, 11vw, 150px); }

@@ -34,6 +34,8 @@ assets/           favicons and social share image
 - **Page order** puts the offer early: one short "Why it matters" section with four numbers, then Services. Resist adding stat sections back above Services.
 - **Statistics** each carry a `.source` line naming the study they come from. If you edit a number, edit its source line with it — and check `data-count-to` on the `.stat__value`, which drives the count-up animation and must match the displayed figure.
 
+- **Icons and graphics.** Every icon is a `<symbol>` in the SVG sprite at the top of `index.html`, drawn on a 24-unit grid with a 1.6 stroke. To show one, wrap it in `<span class="icon-badge" aria-hidden="true"><svg><use href="#i-name"/></svg></span>` (add `icon-badge--dark` on dark bands). Each service card, stat, promise, and "What We Build" item has one. The hero ridgeline is the `.ridge` SVG inside `.hero__art`. The step markers are `.step__node`. The `.equation` strip under "What You Get Back" works out the example in the paragraph above it (4 hours x 5 people x 52 weeks = 1,040 hours); if you change that paragraph, change the strip and its `aria-label` too.
+
 - **How Intelligence Flows** (`#flow`, between What We Build and How It Works) is a scroll story. Text panes scroll over a sticky canvas, and each open gap between panes plays one step: read, filter in, sort, filter out, pay off. The sources, needs, jobs, and results are listed twice: in the `#flow` chips and lists in `index.html`, and in the `SOURCES` and `NEEDS` arrays at the top of `js/flow.js`. Change both together. The counts are an example week and the pane says so; keep that note if you change them.
 
 ## Local preview
